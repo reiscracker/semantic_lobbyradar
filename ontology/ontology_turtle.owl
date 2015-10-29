@@ -1,0 +1,295 @@
+@prefix : <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar##> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#> .
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#> rdf:type owl:Ontology ;
+                                                       
+                                                       owl:imports <http://purl.org/dc/elements/1.1/> ,
+                                                                   <http://www.w3.org/ns/org#> ,
+                                                                   <http://xmlns.com/foaf/0.1/> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed> rdf:type owl:ObjectProperty ;
+                                                               
+                                                               rdfs:range <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod> ;
+                                                               
+                                                               rdfs:domain <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed_in
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed_in> rdf:type owl:ObjectProperty ;
+                                                                  
+                                                                  rdfs:domain <http://linkedgeodata.org/ontology/State> ;
+                                                                  
+                                                                  rdfs:range <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#government_period_of
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#government_period_of> rdf:type owl:ObjectProperty ;
+                                                                           
+                                                                           rdfs:range <http://linkedgeodata.org/ontology/State> ;
+                                                                           
+                                                                           rdfs:domain <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod> ;
+                                                                           
+                                                                           owl:inverseOf <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed_in> .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#alias
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#alias> rdf:type owl:DatatypeProperty ;
+                                                            
+                                                            rdfs:range rdfs:Literal ;
+                                                            
+                                                            rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#countyAssociation
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#countyAssociation> rdf:type owl:DatatypeProperty ;
+                                                                        
+                                                                        rdfs:range rdfs:Literal .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#description
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#description> rdf:type owl:DatatypeProperty ;
+                                                                  
+                                                                  rdfs:range rdfs:Literal .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#displayName
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#displayName> rdf:type owl:DatatypeProperty ;
+                                                                  
+                                                                  rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#lobbyradar_id
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#lobbyradar_id> rdf:type owl:DatatypeProperty ;
+                                                                    
+                                                                    rdfs:range xsd:string .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#mongo_id
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#mongo_id> rdf:type owl:DatatypeProperty ,
+                                                                        owl:FunctionalProperty ;
+                                                               
+                                                               rdfs:range xsd:string .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#stateAssociation
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#stateAssociation> rdf:type owl:DatatypeProperty ;
+                                                                       
+                                                                       rdfs:range rdfs:Literal .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#topic
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#topic> rdf:type owl:DatatypeProperty ;
+                                                            
+                                                            rdfs:range rdfs:Literal .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#usernameBTCert
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#usernameBTCert> rdf:type owl:DatatypeProperty ;
+                                                                     
+                                                                     rdfs:range xsd:string .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#verified
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#verified> rdf:type owl:DatatypeProperty ;
+                                                               
+                                                               rdfs:range xsd:boolean .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://linkedgeodata.org/ontology/Country
+
+<http://linkedgeodata.org/ontology/Country> rdf:type owl:Class ;
+                                            
+                                            rdfs:label "Land" .
+
+
+
+###  http://linkedgeodata.org/ontology/County
+
+<http://linkedgeodata.org/ontology/County> rdf:type owl:Class ;
+                                           
+                                           rdfs:label "Kreis"@de .
+
+
+
+###  http://linkedgeodata.org/ontology/State
+
+<http://linkedgeodata.org/ontology/State> rdf:type owl:Class ;
+                                          
+                                          rdfs:label "Bundesland"@de .
+
+
+
+###  http://purl.org/dc/terms/PeriodOfTime
+
+<http://purl.org/dc/terms/PeriodOfTime> rdf:type owl:Class .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Corporation
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Corporation> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#EducationalOrganization
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#EducationalOrganization> rdf:type owl:Class ;
+                                                                              
+                                                                              rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod> rdf:type owl:Class ;
+                                                                       
+                                                                       rdfs:subClassOf <http://purl.org/dc/terms/PeriodOfTime> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization> rdf:type owl:Class ;
+                                                                         
+                                                                         rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#LobbyOrganisation
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#LobbyOrganisation> rdf:type owl:Class ;
+                                                                        
+                                                                        rdfs:subClassOf <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#NonGovernmentalOrganization
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#NonGovernmentalOrganization> rdf:type owl:Class ;
+                                                                                  
+                                                                                  rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
+                                                                                  
+                                                                                  owl:disjointWith <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization> rdf:type owl:Class ;
+                                                                            
+                                                                            rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
+                                                                            
+                                                                            owl:disjointWith <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty> rdf:type owl:Class ;
+                                                                     
+                                                                     rdfs:subClassOf <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization> rdf:type owl:Class ;
+                                                                          
+                                                                          rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Thinktank
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Thinktank> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization> .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Executive
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Executive> rdf:type owl:NamedIndividual ,
+                                                                         <http://www.w3.org/ns/org#Role> .
+
+
+
+###  https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Representative
+
+<https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Representative> rdf:type owl:NamedIndividual ,
+                                                                              <http://www.w3.org/ns/org#Role> .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+

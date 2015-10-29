@@ -1,0 +1,147 @@
+(1, u"_id : [u'ObjectId']"),
+    :mongo_id string
+
+(2, u"aliases : [u'Array']"),
+    :alias string
+
+(3, u"created : [u'Date']"),
+
+
+
+
+(5, u"importer : [u'String', u'null']"),
+
+
+(6, u"name : [u'String']"),
+    foaf:name Literal
+
+(7, u"search : [u'Array']"),
+
+
+(8, u"slug : [u'String']"),
+
+
+(9, u"tags : [u'Array']"),
+
+
+(10, u"type : [u'String']"),
+    foaf:Person
+    oder
+    org:Organization
+dadurch in jedem Falle foaf:Agent
+
+
+(11, u"updated : [u'Date']"),
+
+# DATA
+(4, u"data : [u'Array']"),
+
+Hängt ab von:
+
+(14, u"data.XX.desc : [u'String']"),
+Quelle:
+Titel: foaf:title   Literal
+Adresse: vCard:hasAdress vCard:Adress               
+Link                    
+Nachname: foaf:lastName Literal              
+Vornamen: foaf:firstName Literal              
+Foto: foaf:depiction foaf:Image
+Beschreibungstext rdfs:comment
+Anzahl der Mitglieder   
+Anzahl der Mitgliedsorganisationen
+Thema :topic Literal
+Bundesland :stateAssociation              
+Benutzename BT-Cert :usernameBTCert      
+Wahlkreis :countyAssociation                
+Verifiziert :verified              
+Anzeigename :displayName             
+URL rdfs:seeAlso                      
+------------------ bis hier erstmal
+Landesliste              
+Finanzierung             
+Partei                   
+Anzahl der Mitarbeiter   
+Rechtsform                
+Beschreibung              
+Webseite                   
+Von                        
+Bis                        
+Listenplatz                
+
+(12, u"data.XX.auto : [u'Boolean']"),
+WEG
+
+(13, u"data.XX.created : [u'Date']"),
+
+
+
+(15, u"data.XX.format : [u'String']"),
+Is the format of data.value 
+
+(16, u"data.XX.id : [u'String']"),
+:lobbyradar_id
+
+(17, u"data.XX.key : [u'String']"),
+WEG
+
+(18, u"data.XX.updated : [u'Date']"),
+
+
+(19, u"data.XX.value : [u'Boolean', u'Number', u'Object', u'String']"),
+
+
+(20, u"data.XX.value.url : [u'String']"),
+
+
+(21, u"data.XX.value.remark : [u'String']"),
+
+
+(22, u"data.XX.value.name : [u'String', u'null']"),
+
+
+(23, u"data.XX.value.addr : [u'String', u'null']"),
+
+
+(24, u"data.XX.value.city : [u'String', u'null']"),
+
+
+(25, u"data.XX.value.postcode : [u'String', u'null']"),
+
+
+(26, u"data.XX.value.type : [u'String']"),
+
+
+(27, u"data.XX.value.country : [u'String', u'null']"),
+
+
+(28, u"data.XX.value.street : [u'String', u'null']"),
+
+
+(29, u"data.XX.value.tel : [u'String', u'null']"),
+
+
+(30, u"data.XX.value.email : [u'String', u'null']"),
+
+
+(31, u"data.XX.value.fax : [u'String', u'null']"),
+
+
+(32, u"data.XX.value.www : [u'String']"),
+
+
+(33, u"data.XX.value.copyright : [u'String', u'null']"),
+
+
+(34, u"data.XX.value.county : [u'String']"),
+
+
+(35, u"data.XX.value.license : [u'String', u'null']"),
+
+
+(36, u"data.XX.value.source_url : [u'String']"),
+
+
+(37, u"data.XX.value.date : [u'Date']"),
+
+
+(38, u"data.XX.value.fmt : [u'String']")
