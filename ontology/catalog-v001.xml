@@ -4,6 +4,6 @@
     <uri id="User Edited Redirect" name="http://xmlns.com/foaf/0.1/" uri="http://xmlns.com/foaf/0.1/"/>
     <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/vcard/ns" uri="http://www.w3.org/2006/vcard/ns#"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1446060987519" name="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#" uri="ontology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1446132256706" name="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#" uri="ontology.owl"/>
     </group>
 </catalog>
