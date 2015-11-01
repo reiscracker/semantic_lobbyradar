@@ -111,7 +111,6 @@
 
     <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed">
         <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod"/>
-        <rdfs:domain rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty"/>
     </owl:ObjectProperty>
     
 
@@ -131,6 +130,132 @@
         <rdfs:range rdf:resource="http://linkedgeodata.org/ontology/State"/>
         <rdfs:domain rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod"/>
         <owl:inverseOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#governed_in"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#advisoryMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#advisoryMemberOf">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#countyCouncilMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#countyCouncilMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#deputyMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#deputyMemberOf">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#donated -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#donated">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#employeeOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#employeeOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#executiveOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#executiveOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+        <rdfs:subPropertyOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#employeeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#fullMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#fullMemberOf">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/org#Organization"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#kuratoriumMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#kuratoriumMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#CharityOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#mediaAdvisoryMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#mediaAdvisoryMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#StateMediaOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#presidentOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#presidentOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+        <rdfs:subPropertyOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#employeeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#received -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#received">
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation"/>
+        <rdfs:domain rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalParty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#secretaryOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#secretaryOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/org#memberOf"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#supervisoryMemberOf -->
+
+    <owl:ObjectProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#supervisoryMemberOf">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+        <rdfs:subPropertyOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#employeeOf"/>
     </owl:ObjectProperty>
     
 
@@ -228,6 +353,24 @@
     
 
 
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#amount -->
+
+    <owl:DatatypeProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#amount">
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:domain rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#year -->
+
+    <owl:DatatypeProperty rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#year">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -269,22 +412,6 @@
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Corporation -->
-
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Corporation">
-        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization"/>
-    </owl:Class>
-    
-
-
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#EducationalOrganization -->
-
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#EducationalOrganization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
-    </owl:Class>
-    
-
-
     <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod -->
 
     <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#GovernmentPeriod">
@@ -293,60 +420,176 @@
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ArmsCorporation -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization">
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ArmsCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#CharityOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#CharityOrganization">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
     </owl:Class>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#LobbyOrganisation -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ConstructionCorporation -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#LobbyOrganisation">
-        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization"/>
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ConstructionCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
     </owl:Class>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#NonGovernmentalOrganization -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#NonGovernmentalOrganization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
-        <owl:disjointWith rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization"/>
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PrivateOrganization"/>
     </owl:Class>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#CountyCouncil -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
-        <owl:disjointWith rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization"/>
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#CountyCouncil">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization"/>
     </owl:Class>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalParty">
-        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PoliticalOrganization"/>
-    </owl:Class>
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Donation"/>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#EducationalOrganization -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#PrivateOrganization">
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#EducationalOrganization">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
     </owl:Class>
     
 
 
-    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Thinktank -->
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#FinancialCorporation -->
 
-    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#Thinktank">
-        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar#HybridOrganization"/>
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#FinancialCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#HealthOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#HealthOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#InfrastructureOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#InfrastructureOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#LobbyOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#LobbyOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ManufactureCorporation -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ManufactureCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#MediaCorporation -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#MediaCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#NonGovernmentalOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#NonGovernmentalOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalParty -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalParty">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PrivateOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PrivateOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#RealEstateCorporation -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#RealEstateCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ReligionOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ReligionOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#StateMediaOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#StateMediaOrganization">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#PoliticalOrganization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ThinktankOrganization -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#ThinktankOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#TradingCorporation -->
+
+    <owl:Class rdf:about="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#TradingCorporation">
+        <rdfs:subClassOf rdf:resource="https://studi.f4.htw-berlin.de/~s0539710/lobbyradar/ontology#Corporation"/>
     </owl:Class>
     
 

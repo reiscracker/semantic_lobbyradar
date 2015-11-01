@@ -16,8 +16,8 @@ class EntityConvert:
     def convert_entity(self, entity):
         # First important thing is to define a URI.
         s = self.make_URI(entity['name'])
-        # And define a type based on the type attribute
-        self.g.add((s, RDF.type, self.make_type(entity['type'])))
+        # And define a type based on the type and tag attribute
+        self.g.add((s, RDF.type, self.make_type(entity['type'], entity['tags'])))
         # Add the mongo id
         self.g.add((s, lobbyOntology.mongo_id, Literal(entity['_id'])))
         # Add aliases
@@ -36,11 +36,41 @@ class EntityConvert:
         from urllib import quote_plus
         from unicodedata import normalize
         return lobbyFacts.term(quote_plus(name.encode("ascii", "ignore")))
-    def make_type(self, type):
+    def make_type(self, type, tags):
         """
-        Type is either Person or Organization
+        Type is either Person, Political Party or, more general, Organization
+        An Agent is a party when it has the party tag.
         """
-        return FOAF.Person if type == "person" else org.Organization
+        type_map = {
+            "partei": lobbyOntology.term("PoliticalParty"),
+            "lobbyorganisation": lobbyOntology.term("LobbyOrganization"),
+            "ruestung": lobbyOntology.term("ArmsCorporation"),
+            "Bau": lobbyOntology.term("ConstructionCorporation"),
+            "Finanzen": lobbyOntology.term("FinancialCorporation"),
+            "Banken / Versicherungen": lobbyOntology.term("FinancialCorporation"),
+            "bank": lobbyOntology.term("FinancialCorporation"),
+            "akademisch": lobbyOntology.term("EducationalOrganization"),
+            "Energie / Wasser / Versorgung": lobbyOntology.term("InfrastructureOrganization"),
+            "energie": lobbyOntology.term("InfrastructureOrganization"),
+            "Gesundheit": lobbyOntology.term("HealthOrganization"),
+            "gesundheit": lobbyOntology.term("HealthOrganization"),
+            "Immobilien": lobbyOntology.term("RealEstateCorporation"),
+            "Handel": lobbyOntology.term("TradingCorporation"),
+            "Religion": lobbyOntology.term("ReligionOrganization"),
+            "medien": lobbyOntology.term("MediaCorporation"),
+            "Industrie": lobbyOntology.term("ManufactureCorporation"),
+            "industrie": lobbyOntology.term("ManufactureCorporation")
+        }
+        # Type could either be Person
+        if type == "person":
+            return FOAF.Person
+        # Or we find a tag that indicates the type of the organization
+        for tag in tags:
+            if type_map.has_key(tag):
+                return type_map[tag]
+        # Eventually, if we didn't find any tag, return org.Organization
+        return org.Organization
+
     def make_aliases(self, aliases):
         # Bag of aliases (why is Bag in RDF namespace, not RDFS?)
         aliasBag = BNode()
