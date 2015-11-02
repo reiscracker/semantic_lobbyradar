@@ -40,25 +40,25 @@ def get_uri_by_object_id(objectId):
 
 
 positions_map = {
-u"Vorstand": lobbyOntology.term("executiveOf"),
-u"Mitglied": org.term("memberOf"),
-u"Ordentliches Mitglied": lobbyOntology.term("fullMemberOf"),
-u"Stellvertretendes Mitglied": lobbyOntology.term("deputyMemberOf"),
-u"Arbeitsverh\xe4ltnis": lobbyOntology.term("employeeOf"),
-u"Aufsichtsratsmitglied": lobbyOntology.term("supervisoryMemberOf"),
-u"Mitglied des Aufsichtsrates": lobbyOntology.term("supervisoryMemberOf"),
-u"Mitglied des Aufsichtsrats": lobbyOntology.term("supervisoryMemberOf"),
-u"Mitglied des Kuratoriums": lobbyOntology.term("kuratoriumMemberOf"),
-u"Mitglied des Stiftungsrates": lobbyOntology.term("kuratoriumMemberOf"),
-u"Mitglied des Beirates": lobbyOntology.term("advisoryMemberOf"),
-u"Mitglied des Vorstandes": lobbyOntology.term("executiveOf"),
-u"Vorstandsmitglied": lobbyOntology.term("executiveOf"),
-u"Staatssekret\xe4r": lobbyOntology.term("secretaryOf"),
-u'Parlamentarischer Staatssekret\xe4r': lobbyOntology.term("secretaryOf"),
-u"Mitglied im Rundfunkrat": lobbyOntology.term("mediaAdvisoryMemberOf"),
-u"Mitglied des Kreistages": lobbyOntology.term("countyCouncilMemberOf"),
-u"Parlamentarischer Staatssekretär": lobbyOntology.term("secretaryOf"),
-u"Vorsitzender": lobbyOntology.term("president"),
+    u"Vorstand": lobbyOntology.term("executiveOf"),
+    u"Mitglied": org.term("memberOf"),
+    u"Ordentliches Mitglied": lobbyOntology.term("fullMemberOf"),
+    u"Stellvertretendes Mitglied": lobbyOntology.term("deputyMemberOf"),
+    u"Arbeitsverh\xe4ltnis": lobbyOntology.term("employeeOf"),
+    u"Aufsichtsratsmitglied": lobbyOntology.term("supervisoryMemberOf"),
+    u"Mitglied des Aufsichtsrates": lobbyOntology.term("supervisoryMemberOf"),
+    u"Mitglied des Aufsichtsrats": lobbyOntology.term("supervisoryMemberOf"),
+    u"Mitglied des Kuratoriums": lobbyOntology.term("kuratoriumMemberOf"),
+    u"Mitglied des Stiftungsrates": lobbyOntology.term("kuratoriumMemberOf"),
+    u"Mitglied des Beirates": lobbyOntology.term("advisoryMemberOf"),
+    u"Mitglied des Vorstandes": lobbyOntology.term("executiveOf"),
+    u"Vorstandsmitglied": lobbyOntology.term("executiveOf"),
+    u"Staatssekret\xe4r": lobbyOntology.term("secretaryOf"),
+    u'Parlamentarischer Staatssekret\xe4r': lobbyOntology.term("secretaryOf"),
+    u"Mitglied im Rundfunkrat": lobbyOntology.term("mediaAdvisoryMemberOf"),
+    u"Mitglied des Kreistages": lobbyOntology.term("countyCouncilMemberOf"),
+    u"Parlamentarischer Staatssekretär": lobbyOntology.term("secretaryOf"),
+    u"Vorsitzender": lobbyOntology.term("president"),
 }
 # Convert the relations next
 all_relations = relations.find()
@@ -69,32 +69,26 @@ for i, relation in enumerate(all_relations):
     # Find the two related entities by sparqling
     objectIds = relation['entities']
     related_entities = (get_uri_by_object_id(objectIds[0]), get_uri_by_object_id(objectIds[1]))
-    # print("Related entities: %s (%s) AND %s (%s)" % (related_entities[0]['uri'], related_entities[0]['type'], related_entities[1]['uri'], related_entities[1]['type']))
 
     # Get the type of the relation
     for single_relation in relation['data']:
         relation_desc = single_relation['desc']
-        # print("Processing relation of type %s" % relation_desc)
 
         if relation_desc == "Verbindung":
             """ For "Verbindung" we will need to know which of the entities is a Person for the relations direction """
-            # print("Types: %s AND %s" % (related_entities[0]['type'], related_entities[1]['type']))
             if related_entities[1]['type'] == FOAF.Person:
                 s, o = related_entities[1]['uri'], related_entities[0]['uri']
             else:
                 s, o = related_entities[0]['uri'], related_entities[1]['uri']
             position = single_relation['value']['position'] if single_relation['value'].has_key('position') else "Mitglied"
             if positions_map.has_key(position):
-                # print("%s -> %s -> %s" % (s, positions_map[position], o))
                 relationGraph.add((s, positions_map[position], o))
 
         elif relation_desc == "Parteispende":
             # print("Parteispende-------------------")
             if related_entities[1]['type'] == lobbyOntology.term("PoliticalParty"):
-                # print("Entity %s is a party" % related_entities[1]['uri'])
                 s, o = related_entities[0]['uri'], related_entities[1]['uri']
             else:
-                # print("Entity %s is a party" % related_entities[0]['uri'])
                 s, o = related_entities[1]['uri'], related_entities[0]['uri']
 
             donation = BNode()

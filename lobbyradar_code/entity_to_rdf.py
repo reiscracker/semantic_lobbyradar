@@ -34,7 +34,6 @@ class EntityConvert:
         URI will be the name stripped of whitespaces (with our namespaces added)
         """
         from urllib import quote_plus
-        from unicodedata import normalize
         return lobbyFacts.term(quote_plus(name.encode("ascii", "ignore")))
     def make_type(self, type, tags):
         """
